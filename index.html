@@ -49,6 +49,7 @@
         <button class="nav-button active" type="button" data-view="discover" aria-current="page"><span class="nav-icon" aria-hidden="true">⌕</span><span>Discover</span></button>
         <button class="nav-button" type="button" data-view="saved"><span class="nav-icon" aria-hidden="true">♡</span><span>Saved</span><span class="nav-count" id="saved-count">0</span></button>
         <button class="nav-button" type="button" data-view="task-flow"><span class="nav-icon" aria-hidden="true">↗</span><span>Task flow</span></button>
+        <button class="nav-button" type="button" data-view="my-tasks"><span class="nav-icon" aria-hidden="true">☑</span><span>My tasks</span></button>
         <button class="nav-button" type="button" data-view="about"><span class="nav-icon" aria-hidden="true">ⓘ</span><span>About</span></button>
       </nav>
       <div class="side-spacer"></div>
@@ -109,6 +110,29 @@
           <p class="task-flow-disclaimer">Progress lasts until this page is refreshed or closed. Restarting a task clears its progress and completion. Demo service details are fictional; requests are not sent or stored.</p>
         </section>
 
+        <section class="task-manager" id="task-manager" aria-labelledby="task-manager-title">
+          <div class="section-heading">
+            <div><h2 id="task-manager-title" tabindex="-1">My tasks</h2><p>Keep track of your own to-dos, separate from the guided walkthroughs.</p></div>
+          </div>
+          <p class="task-manager-note">Tasks are saved on this browser and device, not in an account. Do not enter sensitive information.</p>
+          <form id="personal-task-form">
+            <div class="task-form-fields">
+              <div><label class="form-label" for="personal-task-title">Task</label><input class="form-control" id="personal-task-title" maxlength="120" required placeholder="What do you need to do?"></div>
+              <div><label class="form-label" for="personal-task-priority">Priority</label><select class="form-control" id="personal-task-priority"><option>Low</option><option selected>Medium</option><option>High</option></select></div>
+            </div>
+            <div class="task-form-actions">
+              <button class="primary-button" id="personal-task-submit" type="submit">Add task</button>
+              <button class="secondary-button" id="personal-task-cancel" type="button" hidden>Cancel edit</button>
+            </div>
+          </form>
+          <p id="personal-task-status" class="task-manager-status" role="status" aria-live="polite"></p>
+          <div class="task-list-header">
+            <p id="personal-task-count" aria-live="polite">0 of 0 tasks completed</p>
+            <div><label class="form-label" for="personal-task-filter">Filter by priority</label><select class="form-control" id="personal-task-filter"><option value="All">All priorities</option><option>High</option><option>Medium</option><option>Low</option></select></div>
+          </div>
+          <ul id="personal-task-list" class="personal-task-list"></ul>
+        </section>
+
         <div class="content-grid">
           <section aria-labelledby="directory-title">
             <div class="section-heading">
@@ -158,5 +182,6 @@
 
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/task-manager.js"></script>
 </body>
 </html>

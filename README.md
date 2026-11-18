@@ -6,6 +6,8 @@ The guided walkthrough includes tutoring, technology help, and academic advising
 
 The tracker updates as each step is completed, and the counter shows how many distinct tasks have been completed. Switching tasks preserves each task's progress and directory filters while the page remains open. **Restart task** clears only the selected task's progress and removes its completion from the counter. All task progress resets when the page is refreshed or closed.
 
+The separate **My tasks** section lets users add, edit, complete, reopen, delete, and filter their own tasks by priority. Its counter includes all tasks, including those hidden by the filter. These tasks are stored in the browser's local storage and normally survive refreshes; they do not sync across devices or browsers and can be lost when browser data is cleared. Storage availability depends on browser settings, and locally opened `file:` pages can behave differently from hosted pages. The demo sign-in does not protect stored tasks; do not enter sensitive information.
+
 ## Project structure
 
 ```text
@@ -15,7 +17,8 @@ The tracker updates as each step is completed, and the counter shows how many di
 │   └── styles.css   # Responsive visual styles
 └── js/
     ├── data.js      # Fictional sample service records and guided tasks
-    └── app.js       # Sign-in demo and interactive behavior
+    ├── app.js       # Sign-in, directory, and guided walkthroughs
+    └── task-manager.js # Browser-stored personal tasks
 ```
 
 ## Run locally

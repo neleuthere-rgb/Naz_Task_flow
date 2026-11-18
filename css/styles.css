@@ -17,7 +17,7 @@
 
     body {
       margin: 0;
-      min-width: 320px;
+      min-width: 0;
       background: var(--wash);
       color: var(--ink);
     }
@@ -272,6 +272,27 @@
     .task-flow-steps strong { margin-top: 7px; color: #43516a; font-size: 10px; line-height: 1.35; }
     .task-flow-steps small { margin-top: 4px; color: #8994a6; font-size: 9px; line-height: 1.4; }
     .task-flow-disclaimer { margin: 10px 0 0; color: #9aa4b4; font-size: 9px; }
+
+    .task-manager { margin-top: 21px; padding: 21px 23px; border: 1px solid #e2e8e0; border-radius: 12px; background: white; scroll-margin-top: 18px; }
+    .task-manager-note { color: var(--muted); font-size: 11px; line-height: 1.5; }
+    .task-form-fields { display: grid; grid-template-columns: minmax(0, 1fr) 150px; gap: 12px; }
+    .task-form-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .task-form-actions [hidden] { display: none; }
+    .task-manager-status { min-height: 1.4em; color: var(--blue-dark); font-size: 12px; }
+    .task-manager-status.is-error { color: #a53042; }
+    .task-list-header { display: flex; align-items: end; justify-content: space-between; gap: 12px; margin-top: 12px; }
+    .task-list-header p { margin: 0 0 8px; font-size: 12px; font-weight: 700; }
+    .task-list-header .form-label { margin-top: 0; }
+    .personal-task-list { display: grid; gap: 8px; margin: 16px 0 0; padding: 0; list-style: none; }
+    .personal-task-item { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px; border: 1px solid var(--line); border-radius: 9px; }
+    .personal-task-main { display: flex; align-items: center; gap: 10px; min-width: 0; }
+    .personal-task-main input { flex: 0 0 auto; width: 18px; height: 18px; accent-color: var(--green); }
+    .personal-task-title { display: block; overflow-wrap: anywhere; font-size: 13px; font-weight: 650; }
+    .personal-task-item.is-complete .personal-task-title { color: var(--muted); text-decoration: line-through; }
+    .personal-task-priority { display: block; margin-top: 4px; color: var(--muted); font-size: 11px; }
+    .personal-task-actions { display: flex; flex-wrap: wrap; gap: 6px; flex-shrink: 0; }
+    .personal-task-actions button { padding: 7px 10px; border: 1px solid var(--line); border-radius: 7px; background: white; color: var(--blue-dark); font-size: 11px; }
+    .personal-task-empty { color: var(--muted); font-size: 12px; }
 
     .content-grid {
       display: grid;
@@ -542,7 +563,7 @@
       .sidebar { position: fixed; top: auto; right: 0; bottom: 0; left: 0; z-index: 20; width: 100%; height: auto; flex-direction: row; justify-content: center; padding: 8px 12px calc(8px + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); border-right: 0; }
       .brand, .side-label, .side-spacer, .sidebar-note, .profile { display: none; }
       .nav-list { display: flex; width: min(100%, 480px); justify-content: space-around; gap: 3px; }
-      .nav-button { min-width: 75px; flex-direction: column; justify-content: center; gap: 3px; padding: 7px 8px; font-size: 9px; text-align: center; }
+      .nav-button { min-width: 0; flex: 1; flex-direction: column; justify-content: center; gap: 3px; padding: 7px 4px; font-size: 9px; text-align: center; }
       .nav-icon { font-size: 17px; }
       .nav-count { display: none; }
       .main { padding: 19px 20px 100px; }
@@ -552,6 +573,7 @@
       .hours-card { display: none; }
       .hero { min-height: 215px; }
       .task-flow-panel { padding: 18px; }
+      .task-manager { padding: 18px; }
       .task-flow-steps { grid-template-columns: repeat(5, minmax(93px, 1fr)); gap: 8px; overflow-x: auto; padding-bottom: 5px; }
       .task-flow-steps li { grid-template-columns: minmax(0, 1fr); }
       .task-flow-steps li:not(:last-child)::after { left: 32px; }
@@ -572,6 +594,8 @@
       .hero-copy { padding-right: 2px; }
       .demo-badge { right: 12px; bottom: 10px; font-size: 8px; }
       .task-flow-header { align-items: flex-start; flex-direction: column; gap: 12px; }
+      .task-form-fields { grid-template-columns: minmax(0, 1fr); gap: 0; }
+      .personal-task-item { align-items: flex-start; flex-direction: column; }
       .task-flow-header .primary-button { min-height: 36px; }
       .task-progress-track { margin-top: 12px; }
       .task-flow-steps { grid-template-columns: minmax(0, 1fr); gap: 7px; overflow: visible; margin-top: 15px; }

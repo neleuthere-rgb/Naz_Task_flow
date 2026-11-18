@@ -314,11 +314,16 @@
           document.getElementById("task-flow-title").focus({ preventScroll: true });
           return;
         }
+        if (navButton.dataset.view === "my-tasks") {
+          document.getElementById("task-manager").scrollIntoView({ behavior: "smooth", block: "start" });
+          document.getElementById("task-manager-title").focus({ preventScroll: true });
+          return;
+        }
         state.view = navButton.dataset.view;
         if (state.view === "about") {
           openModal(`
             <div class="modal-heading"><span class="resource-icon tone-blue" aria-hidden="true">🧭</span><div><h2 id="modal-title">About this prototype</h2><p>COP4301 · Activity 2</p></div></div>
-            <p class="modal-description">Campus Compass is a visual concept for a mobile-friendly campus services directory. This front-end prototype demonstrates search, category filters, saved services, detail views, and a guided task flow from finding a service through previewing an information request.</p>
+            <p class="modal-description">Campus Compass is a mobile-friendly campus services directory with guided walkthroughs and a personal task list stored in this browser.</p>
             <div class="form-success">All displayed service information is fictional demo content. The form does not transmit or save data. A real release needs verified campus records, privacy rules, and a secure backend.</div>`);
           state.view = "discover";
           return;
