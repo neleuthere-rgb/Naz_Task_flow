@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>Campus Compass — Student services, made easy</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="login-screen" id="login-screen" aria-labelledby="login-title">
+    <section class="login-card">
+      <div class="login-brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 2.8 20 6.4v5.5c0 4.5-3.1 7.7-8 9.3-4.9-1.6-8-4.8-8-9.3V6.4l8-3.6Z" stroke="currentColor" stroke-width="1.7"/>
+            <path d="m8.2 12.1 2.5 2.4 5.2-5.3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
+          </svg>
+        </span>
+        <span>Campus Compass</span>
+      </div>
+      <h1 id="login-title">Welcome back</h1>
+      <p class="login-intro">Sign in to explore the student services prototype.</p>
+      <form id="login-form">
+        <label class="form-label" for="login-username">Demo username</label>
+        <input class="form-control" id="login-username" name="username" type="text" autocomplete="username" required>
+        <label class="form-label" for="login-password">Demo password</label>
+        <input class="form-control" id="login-password" name="password" type="password" autocomplete="current-password" required>
+        <p class="login-error" id="login-error" role="alert"></p>
+        <button class="primary-button" type="submit">Sign in to demo <span aria-hidden="true">→</span></button>
+      </form>
+      <p class="login-warning">Prototype only: these public sample credentials are embedded in this front-end and do not provide real authentication or protect data. Never reuse them or enter personal information.</p>
+    </section>
+  </main>
+  <div class="app-shell" id="app-shell" hidden>
+    <aside class="sidebar" aria-label="Main navigation">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 2.8 20 6.4v5.5c0 4.5-3.1 7.7-8 9.3-4.9-1.6-8-4.8-8-9.3V6.4l8-3.6Z" stroke="currentColor" stroke-width="1.7"/>
+            <path d="m8.2 12.1 2.5 2.4 5.2-5.3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
+          </svg>
+        </span>
+        <span>Campus Compass</span>
+      </div>
+      <p class="side-label">Workspace</p>
+      <nav class="nav-list" aria-label="App sections">
+        <button class="nav-button active" type="button" data-view="discover" aria-current="page"><span class="nav-icon" aria-hidden="true">⌕</span><span>Discover</span></button>
+        <button class="nav-button" type="button" data-view="saved"><span class="nav-icon" aria-hidden="true">♡</span><span>Saved</span><span class="nav-count" id="saved-count">0</span></button>
+        <button class="nav-button" type="button" data-view="task-flow"><span class="nav-icon" aria-hidden="true">↗</span><span>Task flow</span></button>
+        <button class="nav-button" type="button" data-view="about"><span class="nav-icon" aria-hidden="true">ⓘ</span><span>About</span></button>
+      </nav>
+      <div class="side-spacer"></div>
+      <div class="sidebar-note">
+        <strong>Need a hand?</strong>
+        <p>Tell us what you’re looking for and we’ll point you in the right direction.</p>
+      </div>
+      <div class="profile">
+        <div class="avatar" aria-hidden="true">ST</div>
+        <div><div class="profile-name">Student Demo</div><div class="profile-role">Campus visitor</div></div>
+      </div>
+    </aside>
+
+    <main class="main" id="main-content">
+      <div class="topbar">
+        <div class="breadcrumb"><strong>Student hub</strong> <span aria-hidden="true">/</span> Services</div>
+        <div class="top-actions">
+          <button class="icon-button" id="help-shortcut" type="button" aria-label="Request information" title="Request information">?</button>
+          <button class="icon-button" id="mobile-saved" type="button" aria-label="View saved services" title="Saved services">♡</button>
+          <button class="icon-button" id="logout-button" type="button" aria-label="Sign out of demo" title="Sign out of demo">↪</button>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-dot"></span> Campus services, in one place</div>
+            <h1 id="hero-title">Find the right campus support.</h1>
+            <p>Browse services, check where to go, and find contact details.</p>
+          </div>
+          <div class="hero-illustration" aria-hidden="true"><span>🧭</span></div>
+          <span class="demo-badge">Student demo · sample services</span>
+        </section>
+
+        <section class="task-flow-panel" id="task-flow-panel" aria-labelledby="task-flow-title">
+          <div class="task-flow-header">
+            <div>
+              <span class="task-flow-kicker">Guided walkthrough</span>
+              <h2 id="task-flow-title" tabindex="-1">Guided tasks</h2>
+              <p>Choose a task and follow the steps to preview a request.</p>
+              <p class="task-counter" id="task-counter" role="status" aria-live="polite">0 of 3 tasks completed</p>
+              <label class="form-label" for="task-select">Choose a task</label>
+              <select class="form-control task-select" id="task-select"></select>
+              <p class="task-progress-status" id="task-progress-status" role="status" aria-live="polite">Select Start task, then choose Academic support. Or choose that category to start here.</p>
+            </div>
+            <button class="primary-button" id="start-task-flow-panel" type="button">Start task <span aria-hidden="true">→</span></button>
+          </div>
+          <div class="task-progress-track" id="task-progress-track" role="progressbar" aria-label="Task flow progress" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0">
+            <span class="task-progress-fill" id="task-progress-fill"></span>
+          </div>
+          <ol class="task-flow-steps">
+            <li data-task-step="1"><span class="task-step-number">1</span><strong>Choose a category</strong><small>Academic support</small></li>
+            <li data-task-step="2"><span class="task-step-number">2</span><strong>Search</strong><small>Look for tutoring</small></li>
+            <li data-task-step="3"><span class="task-step-number">3</span><strong>Review a service</strong><small>Open the service details</small></li>
+            <li data-task-step="4"><span class="task-step-number">4</span><strong>Ask a question</strong><small>Complete the short form</small></li>
+            <li data-task-step="5"><span class="task-step-number">5</span><strong>Confirm</strong><small>Preview the request</small></li>
+          </ol>
+          <p class="task-flow-disclaimer">Progress lasts until this page is refreshed or closed. Restarting a task clears its progress and completion. Demo service details are fictional; requests are not sent or stored.</p>
+        </section>
+
+        <div class="content-grid">
+          <section aria-labelledby="directory-title">
+            <div class="section-heading">
+              <div><h2 id="directory-title">Explore services</h2><p id="directory-subtitle">A few helpful places to get started</p></div>
+              <span class="result-count" id="result-count" aria-live="polite"></span>
+            </div>
+            <label class="search-wrap">
+              <span class="search-icon" aria-hidden="true">⌕</span>
+              <input class="search-input" id="search-input" type="search" placeholder="Search services, topics, or locations..." autocomplete="off">
+            </label>
+            <div class="filters" id="filters" aria-label="Filter by category"></div>
+            <div class="resource-grid" id="resource-grid" aria-live="polite"></div>
+            <p class="prototype-note">This is a student prototype with fictional sample records. Confirm services and hours with your institution before relying on them.</p>
+          </section>
+
+          <aside class="right-column" aria-label="Helpful information">
+            <section class="side-card help-card">
+              <div class="help-emoji" aria-hidden="true">✦</div>
+              <h3>Not sure where to start?</h3>
+              <p>Send a short question and we’ll help you find the right service.</p>
+              <button class="primary-button" id="request-button" type="button">Request information <span aria-hidden="true">→</span></button>
+            </section>
+            <section class="side-card">
+              <h3>Popular right now</h3>
+              <p>Quick links students often look for.</p>
+              <div class="popular-list" id="popular-list"></div>
+            </section>
+            <section class="side-card hours-card">
+              <h3>Before you visit</h3>
+              <p>Hours on this demo are placeholders. Check with the office before making a trip.</p>
+              <div class="hours-row"><span>Hours shown</span><strong>Sample only</strong></div>
+              <div class="hours-row"><span>Directory status</span><strong>Prototype</strong></div>
+            </section>
+          </aside>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modal-backdrop" hidden>
+    <section class="modal" id="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+      <button class="modal-close" id="modal-close" type="button" aria-label="Close dialog">×</button>
+      <div id="modal-body"></div>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
